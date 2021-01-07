@@ -14,11 +14,8 @@
 
 + node.js runtime : web browser같은 것. javascript로 node.js runtime의 여러 기능을 호출하여 node.js application을 만드는 것
 
-+ codeanywhere 에서 node.js 설치 (웹IDE중의 하나)
-	+ 구름이 아니라 이걸 한 이유: 다른 것도 한 번 써보면 좋을 것 같아서
 
-
-+ https://nodejs-hansupark0208643167.codeanyapp.com/ : 웹페이지 주소
++ goormide에서 진행함.
 
 + info 선택 시 정보 창이 뜸.
 
