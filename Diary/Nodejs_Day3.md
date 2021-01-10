@@ -31,7 +31,7 @@
 	+ ?id = HTML&page=12 <- query string : 웹서버에 data 전달하는 것 {이번에 다룰 것}
 		+ 시작은 ?로, 값과 값은 &로 구분
 
-+ Query string에 따라 다른 정보 보여주기
++ 쿼리스트링{Query string}에 따라 다른 정보 보여주기
 	+ ?id 값은 url 변수에 들어간다.
 	+ queryData에 id값이 들어간다.
 
