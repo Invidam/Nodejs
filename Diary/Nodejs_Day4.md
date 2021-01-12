@@ -28,5 +28,5 @@
 - - -
 ## 12. [App] 홈페이지 구현			
 
-+ querydata.id === undefined && pathname = '/' 일 때 index를 출력하게끔 해야한다.
++ querydata.id === undefined && pathname === '/' 일 때 index를 출력하게끔 해야한다.
 + description, title을 index에 맞게 입력해준다.
