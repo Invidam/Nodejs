@@ -6,7 +6,7 @@
 ## 10. [Node.js] 콘솔에서의 입력값
 + Input Parameter(정보의 형식) Argument(실제 값)
 + 콘솔, 실행할 명령에 따라 다른 아웃풋을 만들어 내보자.
-+ node.j console input parameters 검색 -> var args = process.argv를 복붙
++ node.js console input parameters 검색 -> var args = process.argv를 복붙
 + 실행했을 때, 얻는 정보들
 	+ L1 : 런타임의 위치
 	+ L2 : 실행한 파일의 경로
