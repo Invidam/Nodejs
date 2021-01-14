@@ -8,6 +8,8 @@
 	+ parameter : title, list, body(description)
 + list 내용을 templateList()로 옮기기
 	+ parpameter : filelist
+	
++ 함수 리턴 값으로 template literal을 리턴하여 end()나 다른 함수의 파라미터로 사용된다.
 
 ## 17. [Node.js] 동기와 비동기 그리고 콜백
 
