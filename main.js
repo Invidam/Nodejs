@@ -1,6 +1,7 @@
 var http = require('http');
 var fs = require('fs');
 var url = require('url');
+var qs = require('querystring');
 
 function templateHTML(title,list,body){
 	return `
@@ -37,7 +38,7 @@ var app = http.createServer(function(request,response){
 	console.log(pathname);
 	if(pathname === '/') {
 		if(queryData.id === undefined) {
-			fs.readdir('./Data', function(error, filelist) {
+			fs.readdir('./Data',"utf8" ,function(error, filelist) {
 
 				var title = 'Welcome';
 				var description = 'Hello, Node.js';
@@ -49,7 +50,7 @@ var app = http.createServer(function(request,response){
 			});
 		}
 		else {
-			fs.readdir('./Data',function(error,filelist) {
+			fs.readdir('./Data',"utf8",function(error,filelist) {
 				var title = queryData.id;
 				fs.readFile(`Data/${queryData.id}`,'utf8',function(err, description){
 					var list = templateList(filelist);
@@ -60,13 +61,13 @@ var app = http.createServer(function(request,response){
 			});
 		}
 	} else if(pathname === '/create') {
-		fs.readdir('./Data', function(error, filelist){
+		fs.readdir('./Data','utf8' ,function(error, filelist){
 
 			var title = 'WEB - create';
 			var list = templateList(filelist);
 
 			var template = templateHTML(title,list,	`
-				<form action="http://nodejs-nppmw.run.goorm.io/process_create" method = "post">
+				<form action="http://nodejs-nppmw.run.goorm.io/create_process" method = "post">
 					<p><input type="text" name = "title" placeholder="title"></p>
 					<p>
 						<textarea name = "description" placeholder = "description"></textarea>
@@ -75,12 +76,32 @@ var app = http.createServer(function(request,response){
 						<input type="submit">	
 					</p>
 				</form>
-			`);
+			`);	
 			
 			response.writeHead(200);
 			response.end(template);
 		});
-	} else {
+	}
+	else if(pathname === '/create_process') {
+		var body = '';
+		request.on('data',function(data) {
+			body = body + data;
+		});
+		request.on('end',function(){
+			var qs = require('querystring');
+			var post = qs.parse(body);
+			var title = post.title;
+			var description = post.description;
+			fs.writeFile(`Data/${title}`,description, 'utf8', 
+				function(err) {
+				response.writeHead(301, {Location: `/?id=${qs.escape(title)}`});	
+				response.end('success');
+			});
+		});
+		
+		
+	}
+	else {
 		
 		response.writeHead(404);
 		response.end('Not Found');
