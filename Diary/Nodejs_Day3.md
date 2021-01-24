@@ -34,6 +34,12 @@
 + 쿼리스트링{Query string}에 따라 다른 정보 보여주기
 	+ ?id 값은 url 변수에 들어간다.
 	+ queryData에 id값이 들어간다.
+	
++ http.createServer(function(request,response) 에서,
+	+ request : 사용자가 요청한 값(입력한 주소)
+		+ url의 경우 request객체에서 가져온다. (주소와 관련이 있으므로)
+	+ response : 서버가 응답한 값
+		+ writeHead or end 함수는 response객체에서 가져온다. (출력or응답과 관련이 있으므로)
 
 
 - - -
