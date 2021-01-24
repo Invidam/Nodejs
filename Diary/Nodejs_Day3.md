@@ -18,10 +18,23 @@
 
 
 - - -
+### 작성한 코드 설명
++ X = require('X') : 'X'라는 모듈(여러기능의 집합체)을 X라는 객체로 가져온다.
 
++ http.createServer(function(request,response) 에서,
+	+ request : 사용자가 요청한 값(입력한 주소)
+		+ url의 경우 request객체에서 가져온다. (주소와 관련이 있으므로)
+	+ response : 서버가 응답한 값
+		+ writeHead or end 함수는 response객체에서 가져온다. (출력or응답과 관련이 있으므로)
+	+ `_url = request.url` : /?id=@@@ 를 담고있다.
+		+ (나는 url 전체은 http부터 담고있을 것이라 생각했는데, 상대 url이나 프로토콜에서의 url등은 꼭 그렇게 전체를 담고있는게 아니었다.)
+		+ path + querystring만 담고 있다.)
++ app.listen(3000) : 3000포트로 리스닝하여 접속 성공시 콜백함수로 전체 코드를 출력
+
+- - -
 
 ## 6. [Node.js] url
-+ url : 모듈(여러 기능을 모은 것)
++ url : 모듈(여러 기능을 모은 것) & IP주소를 언어로 표현한 것 ex) http://www.google.com/  
 
 + http://opentutorials.org:3000/main?id=HTML&page=12
 	+ http <- protocol : 통신 규칙  ex) http, ftp
@@ -33,14 +46,8 @@
 
 + 쿼리스트링{Query string}에 따라 다른 정보 보여주기
 	+ ?id 값은 url 변수에 들어간다.
-	+ queryData에 id값이 들어간다.
-	
-+ http.createServer(function(request,response) 에서,
-	+ request : 사용자가 요청한 값(입력한 주소)
-		+ url의 경우 request객체에서 가져온다. (주소와 관련이 있으므로)
-	+ response : 서버가 응답한 값
-		+ writeHead or end 함수는 response객체에서 가져온다. (출력or응답과 관련이 있으므로)
-
+	+ queryData(`=url.parse(_url, true).query;`)에 querystring들이 들어간다. 
+	+ ?id=html&page = 12 , id(변수) - html(값)  & page(변수) - 12(값)이다.
 
 - - -
 
@@ -78,3 +85,4 @@
 + 1,2,3.html의 본문 내용을 각각 제목의 파일로 생성한다.
 + fsreadfile함수로 `data/${title}` (입력한 id값)에 있는 파일을 읽어 description에 넣는다.
 + template을 읽을 때, template안에 있는 (p태그의 내용에 위치시킨 )description도 같이 읽힌다.
++ title : querydata(id값) 가 들어있고 description은 파일의 내용(본문에 해당할 db에 있는 파일의 내용)이다.
