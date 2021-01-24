@@ -14,11 +14,11 @@
 		+ `
 		  var i = 0;
 		  var list = '<ul>';
-		  while(i < filelist.length) 
-		  {
-			list = list + `<li><a href = ?id=${filelist[i]}`> ${filelist[i]} </a> </li>;
-		  	i = i+1;
-		  }
+		  while(i < filelist.length)
+		  {	
+		    list = list + '<li><a href = "?id=${filelist[i]}"> ${filelist[i]} </a> </li>';
+		    i = i+1;   //backtick을 작음따옴표로 표기함.
+		   }
 		  list = list + '</ul>';
 		  `
 	+ 그러면 Data에 있는 파일명이 list에 뜨며, 클릭시 id값이 바뀌어 id에 해당하는 data를 decription으로 갖는 웹페이지가 열린다.
