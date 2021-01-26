@@ -4,10 +4,14 @@
 
 
 ## 16. [App] 함수를 이용해서 정리 정돈하기
-+ template 내용을 templateHTML()로 옮기기.
++ template = templateHTML();
 	+ parameter : title, list, body(description)
-+ list 내용을 templateList()로 옮기기
-	+ parpameter : filelist
+	+ operate: 리터럴에서, title과 list, body를 이용하여 페이지 내용을 만들어 리턴한다.
+	+ return : 페이지 내용을 담은 리터럴
++ list = templateList(filelist); 
+	+ parpameter : filelist (디렉토리에서의 파일이름을 배열로 가진 것)
+	+ operator : while문을 돌며, filelist[i]를 list에 추가시켜 완성된 list를 리턴한다.
+	+ return : 완성된 list
 	
 + 함수 리턴 값으로 template literal을 리턴하여 end()나 다른 함수의 파라미터로 사용된다.
 
@@ -26,12 +30,23 @@
 + 실습 (동기와 비동기의 차이에 대해서)
 	+ readFileSync(동기방식) : A -> B -> C로 출력
 	+ readFile(비동기 방식): A ->C -> B로 출력
-	+ fs.readfile('위치','인코딩방식' ,function(err,text){ 내용 });
+	+ A,C : 문자
+	+ B : fs.readfile('위치','인코딩방식' ,function(err,text){ 내용 }); 에서의 내용
+	+ 즉, 비동기방식은 시간이 오래 걸리는 일을 나중에 처리한다. (맡겨놓고 다른일을 먼저 처리한다.)
 
 ### 그리고 콜백
-+ 콜백: node.js에게 나중에 결과를 알리게 하는 것
++ 콜백: 비동기방식에서, 맡겨놓았던 일을 처리하면 {}안의 코드를 실행시키는 것이다.
+	+ ex) `fs.readfile('loc','utf8', function(err,text) {코드});`
+		+ loc의 파일을 읽어오면 안의 코드를 실행시킨다. (정확하게는 3번 째 인자인 function(err,text {})를 실행시키는 것이다.)
 + 이름이 없는 함수 : 익명 함수 (변수가 지명함)
 	+ 실행시에는 변수명();
+	+ `var a = function() {console.log('a');}` 같은 경우이다.
++ 콜백함수는 함수안에서 처리될 때 실행되는 (3번째 인자였던) (익명)함수이다.
++ js, 함수는 값이다.
+   `var a = function() {console.log('a');}`
+   `function slowfunc(callback) {callback()};`
+   `slowfunc(a);`
++ slowfunc가 실행되며 콜백함수로 a가 실행된다.
 
 ## 18. [Node.js] 패키지 매니저와 PM2
 + 패키지 매니저{Package Manager}

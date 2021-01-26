@@ -86,3 +86,5 @@
 + fsreadfile함수로 `data/${title}` (입력한 id값)에 있는 파일을 읽어 description에 넣는다.
 + template을 읽을 때, template안에 있는 (p태그의 내용에 위치시킨 )description도 같이 읽힌다.
 + title : querydata(id값) 가 들어있고 description은 파일의 내용(본문에 해당할 db에 있는 파일의 내용)이다.
++ resonse.end(template)으로 화면을 출력한다.
+	+ title과 description도 template안에 리터럴을 이용하여 들어있어, 파일의 내용이 페이지에 적용되어 출력된다.

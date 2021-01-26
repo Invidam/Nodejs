@@ -10,6 +10,7 @@
 ## 14. [App] 글목록 출력하기
 
 + fs.readdir( '위치' , function(error,filelist) {})에서
+	+ fielist[]라는 배열에 디렉토리의 파일이름들이 담겨있다.
 	+ list 변수에 `<ul>` +(while문 돌며 /?id=${filelist[i]}를 `<a>`로 갖는 ${filelist[i]}) +`<ul>`를 추가시킨 후 기존 list위치에 이 변수를 옮긴다.
 		+ `
 		  var i = 0;
