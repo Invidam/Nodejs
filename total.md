@@ -20,6 +20,8 @@
 		+ 기초 지식 비유로 설명
 	+ https://drive.google.com/file/d/0B-tD535n_rOfX1Iwa0RBRU9VWGM/view
 		+ 웹 커리큘럼ㅎ
+	+ https://github.com/kamranahmedse/developer-roadmap/blob/master/translations/korean/README.md
+		+ 로드맵
 + 공부론
 	+ 
 	+ https://github.com/Gyubin/TIL/blob/master/ETC/how_to_study_programming.md
