@@ -20,6 +20,8 @@
 		+ 기초 지식 비유로 설명
 	+ https://drive.google.com/file/d/0B-tD535n_rOfX1Iwa0RBRU9VWGM/view
 		+ 웹 커리큘럼ㅎ
+	+ https://github.com/kamranahmedse/developer-roadmap/blob/master/translations/korean/README.md
+		+ 로드맵
 + 공부론
 	+ 
 	+ https://github.com/Gyubin/TIL/blob/master/ETC/how_to_study_programming.md
@@ -87,7 +89,7 @@
 	+ https://m.blog.naver.com/PostView.nhn?blogId=lgsee19&logNo=220366753832&proxyReferer=https:%2F%2Fwww.google.com%2F
 		+ 백야
 	+ 블링크 기적의 힘 (+ 직관 관련 책들)
-	+ 고대 서양철학, 논어 중용 등 동양철학, 니체, 흄, 이데아, 도옙스키, 파우스트, 단테, 성경, 세르반테스, 프로이트 로레입숨 작가 책 수상록ㅎ 등등
+	+ 고대 서양철학, 논어 중용 등 동양철학(노자, 공자, 맹자), 니체, 흄, 이데아, 도옙스키, 파우스트, 단테, 성경, 세르반테스, 프로이트 로레입숨 작가 책 수상록ㅎ 등등
 
 
 ## 기타
