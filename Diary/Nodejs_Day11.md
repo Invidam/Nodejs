@@ -64,10 +64,10 @@
 	+ readfile에서, ..(부모)/security.js(비문 저장되 파일)을 읽어 페이지에 출력한다.
 		+ 비문이 다 보이며, 수정 삭제까지 가능하다.
 
-+ `path.parse('../ecurity.js');
++ `path.parse('../security.js');`
+	+ root, dir, base,ext,name이 보여진다.
+		+ 이 때, 여러 정보가 보여져 보안이 낮은 상태이다.
 
-			var filteredId = path.parse(queryData.id).base;
-			fs.unlink(`Data/${queryData.filteredId}`, function(error){해준다.}
-나중에 수정할 것.
-
-+ 기존 위치가보면 정보가 안보인다. 제한된 정보만 주어서 그렇다. (base정보만)
++ var filteredId = path.parse(queryData.id).base;
+	+ base만 들어와 ../security.js 를 id값으로 줘도 security.js(base 값)만 주소로써 readfile에 처리된다.
+		+ id, update, delete를 위 코드로 바꾸어준다.
