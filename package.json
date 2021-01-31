@@ -1,0 +1,25 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "+ https://opentutorials.org/course/3332/21045 에서 공부하고 있습니다. \t+ http://nodejs-nppmw.run.goorm.io/ \t\t+ 주소",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://1dece15f35d08cf0a4d4cd30472106ebcd16250c@github.com/Invidam/Nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Invidam/Nodejs/issues"
+  },
+  "homepage": "https://github.com/Invidam/Nodejs#readme",
+  "dependencies": {
+    "sanitize-html": "^2.3.2"
+  }
+}

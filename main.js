@@ -4,7 +4,7 @@ var url = require('url');
 var qs = require('querystring');
 var template = require('./lib/template.js');
 var path = require('path');
-
+var sanitizeHtml = require('sanitize-html');
 
 var app = http.createServer(function(request,response){
     var _url = request.url;
@@ -26,15 +26,17 @@ var app = http.createServer(function(request,response){
 		}
 		else {
 			fs.readdir('./Data',"utf8",function(error,filelist) {
-				var title = queryData.id;
 				var filteredId = path.parse(queryData.id).base;
-				fs.readFile(`Data/${queryData.filteredId}`,'utf8',function(err, description){
+				fs.readFile(`Data/${filteredId}`,'utf8',function(err, description){
+					var title = queryData.id;
+					var sanitizedTitle = sanitizeHtml(title);
+					var sanitizedDescription = sanitizeHtml(description);
 					var list = template.list(filelist);
-					var html = template.html(title,list,` <h2>${title}</h2> <p> ${description}</p>`,`
+					var html = template.html(sanitizedTitle,list,` <h2>${sanitizedTitle}</h2> <p> ${sanitizedDescription}</p>`,`
 		<a href="/create">create</a>
-		<a href="/update?id=${title}">update</a>
+		<a href="/update?id=${sanitizedTitle}">update</a>
 		<form action="delete_process" method = "post" onsubmit="console.log("deleting")"> 
-			<input type="hidden" name = "id" value = "${title}">
+			<input type="hidden" name = "id" value = "${sanitizedTitle}">
 			<input type="submit" value= "delete">
 		</form>
 		`);
@@ -87,7 +89,7 @@ var app = http.createServer(function(request,response){
 		fs.readdir('./Data',"utf8",function(error,filelist) {
 			var title = queryData.id;
 			var filteredId = path.parse(queryData.id).base;
-			fs.readFile(`Data/${queryData.filteredId}`,'utf8',function(err, description){
+			fs.readFile(`Data/${filteredId}`,'utf8',function(err, description){
 				var list = template.list(filelist);
 				var html = template.html(title,list,
 					`
@@ -139,8 +141,7 @@ var app = http.createServer(function(request,response){
 		request.on('end',function(){
 			var post = qs.parse(body);
 			var id = post.id;
-			var filteredId = path.parse(queryData.id).base;
-			fs.unlink(`Data/${queryData.filteredId}`, function(error){
+			fs.unlink(`Data/${id}`, function(error){
 				response.writeHead(301,{Location : `/`});
 				response.end();
 			});
