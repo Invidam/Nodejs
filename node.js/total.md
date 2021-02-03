@@ -69,6 +69,9 @@
 	+ https://backlog.com/git-tutorial/kr/stepup/stepup1_2.html
 		+ git 교육
 	
++ db
+	+ https://m.blog.naver.com/nux0119/148892482
+		+ 공부할것들 정리
 + data science
 	+ https://blog.pabii.co.kr/category/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/page/8/
 		+ 데이터 사이언스 강의?
