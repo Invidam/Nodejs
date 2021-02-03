@@ -72,6 +72,11 @@
 + db
 	+ https://m.blog.naver.com/nux0119/148892482
 		+ 공부할것들 정리
+	+ https://dangdo.tistory.com/41
+		+ 사이트 추천 사이트
+	+ https://yohanpro.com/posts/%EA%B5%AC%EB%A6%84IDE%EB%A1%9C%20MYSQL%20%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95/
+		+ 구름+db
+	+ 생코 참고
 + data science
 	+ https://blog.pabii.co.kr/category/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/page/8/
 		+ 데이터 사이언스 강의?
